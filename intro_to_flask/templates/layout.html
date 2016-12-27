@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  
+  <title>Flask App</title>  
+  <style>
+.logo{
+  text-align:center;}
+  .myelement{
+   background-color:white;}
+.jumbo{ color:black;
+   background-color:white; }
+#myid{
+   color:black;
+   background-color:white;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #483D8B;
+}
+
+
+
+li a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px 14px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+} 
+
+</style> 
+  </head>
+  <body class="myelement">
+   
+    <header>
+      <div class="container">
+        <h1 class="logo">Visitor log management</h1>
+        <strong><nav>
+      <ul class="menu">
+	    
+        <li><a href="{{ url_for('home') }}" >Home</a></li>
+        <li><a href="{{ url_for('visitorregistration') }}">Visitor Registration</a></li>
+        <li><a href="{{ url_for('allvisitors') }}">See All Visitors</a></li>
+		<li><a href="{{ url_for('export_excel') }}">Export to excel</a></li>
+
+      </div>
+	  
+    </nav></strong>
+	<div class="jumbo">
+    <h1>Welcome to Visitor Log<h1>
+    <h2>Here you can:</h2>
+    <ul id="myid">
+    <li>Register a new visitor</li>
+    <li>See all the visitors in the system</li>
+    <li>Download visitor information in excel format</li>
+    </ul>
+  </div>
+
+      </div>
+    </header> 
+     
+    <div class="container">
+      {% block content %}
+      {% endblock %}
+    </div>
+     
+  </body>
+</html>
